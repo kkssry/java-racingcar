@@ -14,14 +14,10 @@ public class Car {
         this.name = name;
     }
 
-    public Car(String name, int position) {
-        this.name = name;
-        this.position = position;
-    }
-
-    public void go() {
-        if (rnd.nextInt(RANDOM) >= MOVE)
+    public void go() {                                                      //차위치 배열값이 시도횟수가 4이상일경우 값을 1증가
+        if (rnd.nextInt(RANDOM) >= MOVE) {
             position++;
+        }
     }
 
     public String getName() {
@@ -41,9 +37,6 @@ public class Car {
         if (max == position)
             return name + ",";
         return "";
-    }
 
-    public static int getMax(){
-        return max;
     }
 }

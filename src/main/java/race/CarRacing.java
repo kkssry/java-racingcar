@@ -29,21 +29,23 @@ public class CarRacing {
         }
     }
 
-    public static void maxSet(Car[] car) {
+    private static void maxSet(Car[] car) {
         for (int i = 0; i < car.length; i++) {
             car[i].maxPosition();
         }
     }
 
-    public static String victory(Car[] car) {
+    private static String victory(Car[] car) {
         String champion = "";
         for (int i = 0; i < car.length; i++) {
             champion += car[i].victory();
         }
-        System.out.println(champion);
         return champion;
     }
 
+    public static Car[] getCarArray(){
+        return car;
+    }
 
     public static void main(String[] args) {
         String[] nameArr = InputView.inputName().split(",");
@@ -53,6 +55,6 @@ public class CarRacing {
         transport(tryCount, car);
         valuePrint(car);
         maxSet(car);
-        System.out.println(ResultView.victory(victory(car)));
+        ResultView.victory(victory(car));
     }
 }
